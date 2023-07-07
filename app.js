@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get('/saludo', (req, res) => {
     return res.json({
-        saludo:'hola como estas'
+        saludo:'hola desde alma'
     });
 });
 
