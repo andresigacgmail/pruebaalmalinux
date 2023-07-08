@@ -6,6 +6,7 @@ const cors = require('cors');
 app.use(cors({origin:'*'}));
 app.use(express.json());
 
+app.get('/', (req, res) => res.json({message:'app is running'}));
 
 app.get('/saludo', (req, res) => {
     return res.json({
