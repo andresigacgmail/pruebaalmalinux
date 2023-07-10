@@ -22,11 +22,14 @@ app.get('/saludo', (req, res) => {
     });
 });
 
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    console.log('listening on port', PORT);
+https.createServer(options, app).listen(3001, function () {
+    console.log('Servidor HTTPS escuchando en el puerto 3001');
 });
+
+// const PORT = process.env.PORT || 3001;
+// app.listen(PORT, () => {
+//     console.log('listening on port', PORT);
+// });
 
 
 
