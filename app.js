@@ -5,10 +5,10 @@ const https = require('https');
 const app = express();
 // Configura tus rutas y middleware de Express aquí
 
-const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/homeristicodeath.tech/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/homeristicodeath.tech/fullchain.pem')
-  };
+// const options = {
+//     key: fs.readFileSync('/etc/letsencrypt/live/homeristicodeath.tech/privkey.pem'),
+//     cert: fs.readFileSync('/etc/letsencrypt/live/homeristicodeath.tech/fullchain.pem')
+//   };
 const cors = require('cors');
 
 app.use(cors({origin:'*'}));
@@ -22,14 +22,14 @@ app.get('/saludo', (req, res) => {
     });
 });
 
-https.createServer(options, app).listen(3001, function () {
-    console.log('Servidor HTTPS escuchando en el puerto 3001');
-});
-
-// const PORT = process.env.PORT || 3001;
-// app.listen(PORT, () => {
-//     console.log('listening on port', PORT);
+// https.createServer(options, app).listen(3001, function () {
+//     console.log('Servidor HTTPS escuchando en el puerto 3001');
 // });
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log('listening on port', PORT);
+});
 
 
 
